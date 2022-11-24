@@ -9,13 +9,18 @@ public class rightrotation {
 	  System.out.print(x);
   }
   
-  int temp=RR[0];
-  
-  for(int i =0;i<RR.length-1;i++) {
-	  RR[i]=RR[i+1];
-  }
-  
-  RR[RR.length-1]=temp;
+
+      int j, last;    
+            //Stores the last element of array    
+            last = arr[arr.length-1];    
+            
+            for(j = arr.length-1; j > 0; j--){    
+                //Shift element of array by one    
+                arr[j] = arr[j-1];    
+            }    
+        arr[0]=last;
+        
+    
   System.out.println("After rotation :");
   for(int x:RR) {
 	  System.out.print(x);
