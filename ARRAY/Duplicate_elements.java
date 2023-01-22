@@ -19,6 +19,8 @@ public class Main
 	   }
 
 *******************************************************************************
+way 2:
+
 import java.util.*;
 
 public class Main
@@ -38,6 +40,8 @@ public class Main
             }
 
 *******************************************************************************
+way 3:
+
 package com.java.array;
 import java.util.*;
 public class Duplicate {
