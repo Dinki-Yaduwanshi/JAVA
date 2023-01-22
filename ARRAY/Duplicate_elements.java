@@ -38,5 +38,35 @@ public class Main
             }
 
 *******************************************************************************
+package com.java.array;
+import java.util.*;
+public class Duplicate {
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a[]= {2,4,5,6,7,2,4,6};
+      Map<Integer,Integer> hm = new HashMap();
+      for(int no:a) {
+    	  Integer count=hm.get(no);
+    	  if(count==null) {
+    		  hm.put(no,1);
+    	  }else {
+    		  count++;
+    		  hm.put(no, count);
+    	  }
+      }
+      
+      Set<Map.Entry<Integer,Integer>> e= hm.entrySet();
+      
+      for(Map.Entry<Integer, Integer> h:e) {
+    	  if(h.getValue()>1) {
+    		  System.out.print(h.getKey()+" ");
+    	  }
+      }
+      
+      
+	}
+
+}
 
