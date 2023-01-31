@@ -124,6 +124,75 @@ public class Prep1 {
 		size++;
 		}
 		}
+	
+	
+	
+	void removeLast() {
+			if(size==0) {                                  //size=0.no element to remove
+				System.out.print("List is empty");
+			}else if(size==1) {                             //only 1 element, set head and tail=null and decrement size
+				head=tail=null;
+						size=0;
+			}else {                                        //for any number of size 
+				Node temp=head;
+				for(int i=0;i<size-2;i++) {                //traverse to second last node
+					temp=temp.next;
+				}
+				temp.next=null;                            //set null to second last element next
+				tail=temp;                                 //assign tail to second last element
+				size--;                                    //size is decremented
+			}
+			}
+		
+		private Node getNode(int idx) {                    //a private method which can be used only within the class to get index node
+			Node temp=head;
+			for(int i=0;i<idx;i++) {
+			 
+				temp=temp.next;
+			}
+			return temp;
+		}
+		void reverseLinkedList1() {                       // linkedlist reversal(using data field)
+			int li=0;                                     //left index =0
+			int ei=size-1;                                //right index=size-1;
+			while(li<ei) {                                // making a loop with both pointers
+				Node left=getNode(li);                    //getting left node
+				Node right=getNode(ei);                   //getting right node
+				int temp=left.data;                       //swapping both of their data
+				left.data=right.data;
+				right.data=temp;
+				
+				li++;                                    //moving left forward
+				ei--;                                    //moving end backward
+			}
+			Node temp=head;
+			head=tail;
+			tail=temp;
+			
+			display();
+		}
+		
+		public void reverseLinkedList2() {              //using next node
+			Node previous=null; //Node previous is set null;
+			Node current=head; //Node current is on head;
+			
+			while(current!=null) {
+				Node temp=current.next;
+				current.next=previous;
+				current=temp;
+				previous.next=current;
+			}
+			Node temp=head;
+			head=tail;
+			tail=temp;
+			
+			
+			display();
+			
+			
+		}
+	
+
 		
 	 public static void main(String[] args) {
 		Prep1 p = new Prep1();
