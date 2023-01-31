@@ -172,25 +172,47 @@ public class Prep1 {
 			display();
 		}
 		
-		public void reverseLinkedList2() {              //using next node
+			
+	               public void reverseLinkedList2() {              //using next node
 			Node previous=null; //Node previous is set null;
 			Node current=head; //Node current is on head;
 			
-			while(current!=null) {
-				Node temp=current.next;
-				current.next=previous;
-				current=temp;
-				previous.next=current;
+			while(current!=null) {//till current becomes null
+				Node temp=current.next; //save the current next node
+				current.next=previous;  //point the next node to previous
+				previous=current;      //previous moves to current
+				current=temp;         //current jumps on next element
 			}
-			Node temp=head;
+			Node temp=head;           //swap head and tail
 			head=tail;
 			tail=temp;
 			
 			
-			display();
+			display();               //call display
+			}
+		
+		
+		void removeAt(int idx) {
 			
-			
+			if(idx<0||idx>size) {   //if index is negative or size is more 
+				System.out.print("Invalid index");
+			}else if(size==0) {     //empty linked list
+				System.out.print("Empty linked list"); 
+				
+			}else if(idx==0) {      //first element to be removed
+				removeFirst();
+			}else if(idx==size-1) { //last element to be removed
+				removeLast();
+			}else {                 //in between linked list
+				Node temp=head;
+				for(int i=0;i<idx-1;i++) { //traverse till index-1
+					temp=temp.next;        
+				}
+				temp.next=temp.next.next;  //set next to be next of the index
+				size--;                    //size decremented
+			}
 		}
+
 	
 
 		
