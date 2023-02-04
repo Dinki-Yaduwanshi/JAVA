@@ -212,7 +212,69 @@ public class Prep1 {
 				size--;                    //size decremented
 			}
 		}
-
+                
+	void returnFromLast(int idx) { //2pointer solution
+			Node slow= head;
+			Node fast=head;
+			
+			for(int i=0;i<idx;i++) {
+				fast=fast.next;
+			}
+			
+			while(fast!=null) {
+				slow=slow.next;
+				fast=fast.next;
+			}
+			
+			System.out.print(slow.data);
+		}
+	
+	
+		
+		public void returnMiddle() {
+			Node start= new Node();
+			start.next=head;
+			Node slow=head;;
+			Node fast=head;
+			
+			while(fast.next!=null&&fast.next.next!=null) {
+				slow=slow.next;
+				fast=fast.next.next;
+			}
+			
+			System.out.print(slow.data);
+		}
+		
+	
+	
+		void mergeSortedList(Prep1 a,Prep1 b) {
+			Node first=a.head;
+			Node sec=b.head;
+			
+			Prep1 list=new Prep1();
+			while(first!=null&&sec!=null) {
+				if(first.data<sec.data) {
+					list.addNode(first.data);
+					first=first.next;
+				}else {
+					list.addNode(sec.data);
+					sec=sec.next;
+				}
+			}
+			
+			while(first!=null) {
+				list.addNode(first.data);
+				first=first.next;
+			}
+			
+			while(sec!=null) {
+				list.addNode(sec.data);
+				sec=sec.next;
+			}
+			
+			list.display();
+		}
+	
 	
 
 		
