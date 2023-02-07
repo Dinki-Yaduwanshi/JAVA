@@ -32,13 +32,23 @@ public class Main
 		int x3=(a*d)+(b*c);
 		int y3=b*d;
 		
-		int j=x3/y3;
-		int l =x3%y3;
-		if(l==0){
-		    l=1;
+		int div=0;
+		if(x3>y3){
+		div=x3;
+		}
+		else{
+		div=y3;
 		}
 		
-		System.out.print(j+"/"+l);
+		for(int i=div;i>0;i--){ 
+		if(x3%i===0 && y3%i==0){
+		x3=x3/i;
+	        y3=y3/i;
+		}
+			}
+		
+		
+		System.out.print(x3+"/"+y3);
 		
 	}
 }
