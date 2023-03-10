@@ -1,4 +1,4 @@
-Day 17 coding Statement : Write a program to find the Factors of a number
+Day 17 coding Statement :- Write a program to find the Factors of a number
 
 Description
 
