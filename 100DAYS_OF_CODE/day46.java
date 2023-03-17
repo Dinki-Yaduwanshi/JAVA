@@ -1,4 +1,4 @@
-Day 46 coding Statement : Write Program to find sum of elements in an array
+Day 46 coding Statement : Write Program to find sum of elements in an array.
 
 Description
 
