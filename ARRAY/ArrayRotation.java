@@ -4,7 +4,7 @@ public class ArrayRotation {
 
 	
 		public static void main(String[] args) {
-			int A[]={1,2,3,4,5,6};
+			int A[]={1,2,3,4,5,7};
 			
 			for(int x :A) {
 				System.out.print(x);
