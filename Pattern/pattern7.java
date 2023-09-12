@@ -9,7 +9,7 @@ public class MyClass {
           else
           System.out.print(" *");
       }
-      System.out.println();
+      System.out.println() ;
      }
 }
 }
