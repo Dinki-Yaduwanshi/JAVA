@@ -1,7 +1,7 @@
 public class DeleteFromMiddle {
 public	int size;
 class Node{
-	int data;
+	int data ;
 	Node next;
 	
 	Node(int d){
